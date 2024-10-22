@@ -50,56 +50,6 @@ if __name__ == "__main__":
     main()    
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # before 
 
 # a = float(input("Enter first no:"))
