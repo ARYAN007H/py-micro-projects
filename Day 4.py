@@ -1,28 +1,39 @@
 import random
-print("Hey there in this game u have to guess a no chosen by computer from 1 to 100 ")
+print("Hey there! In this game, you have to guess a number chosen by the computer from 1 to 100.")
 
-def guess():   
+def guess(random_int):   
     try:
-        guess = int(input("Enter you guess"))
-        random_int = random.randint(1, 100)
+        user_guess = int(input("Enter your guess: "))
 
-        if guess > random_int + 20:
-            result =  "Too higher value"
-        elif guess >= random_int +5:
-            result = "a little higher than computers's guess"
-        elif guess == random_int:
-            result = "Yayy!, u got it correct"
-        elif guess <= random_int -5:
-            result = "U r close, a little lower than actual guess"
-        elif guess <= random_int -20:
-            result = "Too far!, very low than actual value"
-
+        if user_guess > random_int + 20:
+            return "Too high! You're far from the correct value."
+        elif user_guess > random_int + 5:
+            return "You're a little higher than the computer's guess."
+        elif user_guess == random_int:
+            return "Yayy! You got it correct!"
+        elif user_guess < random_int - 20:
+            return "Too low! You're far from the correct value."
+        elif user_guess < random_int - 5:
+            return "You're a little lower than the computer's guess."
+        else:
+            return "You're very close!"
+    
     except ValueError:
-        print("Incorrect input")
+        return "Incorrect input! Please enter a valid number."
+
+
 def main():
+    random_int = random.randint(1, 100)  # Generate a random number once
+
     while True:
-        guess()
-        b = input("Do u want to continue playing (yes/no)").lower
+        result = guess(random_int)
+        print(result)
+
+        # If the guess is correct, exit the loop
+        if result == "Yayy! You got it correct!":
+            break
+
+        b = input("Do you want to continue playing (yes/no)? ").lower()
         if b != "yes":
             print("Goodbye!")
             break
