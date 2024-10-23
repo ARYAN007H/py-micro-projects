@@ -23,21 +23,22 @@ def guess(random_int):
 
 
 def main():
-    random_int = random.randint(1, 100)  # Generate a random number once
-
     while True:
-        result = guess(random_int)
-        print(result)
+        random_int = random.randint(1, 100)  
+        
+        while True:
+            result = guess(random_int)
+            print(result)
 
-        # If the guess is correct, exit the loop
-        if result == "Yayy! You got it correct!":
-            break
-
+            # If the guess is correct, break out of the inner loop
+            if result == "Yayy! You got it correct!":
+                break
+        
+        
         b = input("Do you want to continue playing (yes/no)? ").lower()
         if b != "yes":
             print("Goodbye!")
             break
-
 
 if __name__ == "__main__":
     main()
