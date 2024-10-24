@@ -21,7 +21,6 @@ def guess(random_int):
     except ValueError:
         return "Incorrect input! Please enter a valid number."
 
-
 def main():
     while True:
         random_int = random.randint(1, 100)  
